@@ -10,10 +10,10 @@ ModuleManager::ModuleManager()
 
 void ModuleManager::initialize()
 {
-	modules.push_back(std::make_shared<Mod1Module>());
-	modules.push_back(std::make_shared<Mod2Module>());
-	modules.push_back(std::make_shared<Mod1Module>());
-	modules.push_back(std::make_shared<Mod2Module>());
+	pMod1 = new Mod1Module();
+	pMod2 = new Mod2Module();
+	modules.push_back(std::make_shared<Mod1Module>(*pMod1));
+	modules.push_back(std::make_shared<Mod2Module>(*pMod2));
 }
 
 void ModuleManager::connect()
@@ -28,4 +28,9 @@ void ModuleManager::tick()
     {
         (*it)->tick();
     }
+}
+
+void ModuleManager::test()
+{
+	std::cout << "msg from modulemanager" << std::endl;
 }

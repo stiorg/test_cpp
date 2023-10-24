@@ -1,18 +1,24 @@
 #include <thread>
 #include <iostream>
-#include "modules/ModuleManager.h"
+
+#include "system/TestSystem.h"
+
+class ISystem;
+
+ISystem* g_system = nullptr;
 
 
 int main()
 {
-    ModuleManager mm = ModuleManager();
-    mm.initialize();
+    g_system = new TestSystem();
+    g_system->initialize();
+
     std::thread([&]
     {
         while(true)
         {
             std::this_thread::sleep_for(std::chrono::seconds(10));
-            mm.tick();
+            g_system->tick();
         }
     }).detach();
 
