@@ -4,7 +4,7 @@
 class Mod2Module : public Module
 {
     public:
-	Mod2Module(/*ModuleManager* mm*/);
+	Mod2Module();
 	void tick();
     private:
 };

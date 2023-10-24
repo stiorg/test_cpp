@@ -6,5 +6,6 @@ class Mod1Module : public Module
     public:
 	Mod1Module(/*ModuleManager* mm*/);
 	void tick();
+    void test();
     private:
 };

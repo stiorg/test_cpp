@@ -15,6 +15,7 @@ class ModuleManager
 	void connect();
     void tick();
     void test();
+    std::shared_ptr<Mod1Module> getMod1();
 
     private:
     std::list<std::shared_ptr<Module>> modules;

@@ -34,3 +34,8 @@ void ModuleManager::test()
 {
 	std::cout << "msg from modulemanager" << std::endl;
 }
+
+std::shared_ptr<Mod1Module> ModuleManager::getMod1()
+{
+	return std::make_shared<Mod1Module>(*pMod1);
+}
